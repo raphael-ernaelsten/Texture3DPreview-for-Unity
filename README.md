@@ -12,7 +12,7 @@ When importing the Texture3D asset, Unity will automatically render a preview of
 
 When selecting a Texture3D asset in the Project windows, Unity will display an preview of the Texture3D in the Inspector.
 
-![Texture3D asset preview](https://i.imgur.com/Eh1ZyeR.gif)
+![Texture3D asset preview](https://i.imgur.com/Lm5Kykw.gif)
 
 ----------
 
@@ -23,7 +23,7 @@ To enable Texture3D field preview on a GameObject's component, add
     [Texture3DPreview]
 in front of the declared field.
 
-![Texture3D field preview in Inspector](https://i.imgur.com/Wz52Dra.gif)
+![Texture3D field preview in Inspector](https://i.imgur.com/ru8u1qK.gif)
 
 ----------
 
