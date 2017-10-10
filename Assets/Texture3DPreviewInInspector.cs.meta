@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 308d5e80d1df35543bd2ec9636edd96a
+timeCreated: 1507629441
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - texture3D: {fileID: 11700000, guid: 64677355665b5684c822c245cb6a495b, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
