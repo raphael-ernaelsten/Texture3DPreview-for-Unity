@@ -29,6 +29,13 @@ in front of the declared field.
 
 ----------
 
+### Requirements 
+
+ - Shader model 3 capable graphic card
+ - Unity 2017.1+
+
+----------
+
 ### TODO 
 
  - Preview non uniform Texture3D in their respective ratio (currently all previews will be cube)
