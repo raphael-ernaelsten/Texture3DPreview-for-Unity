@@ -2,6 +2,8 @@
 
 ## This package enables interactive previews of [Texture3D](https://docs.unity3d.com/ScriptReference/Texture3D.html) assets in Unity's Inspector window.
 
+**[You can directly download the Unity package by clicking here or by going in the Release section](https://github.com/raphael-ernaelsten/Texture3DPreview-for-Unity/releases)**
+
 ----------
 
 ### Previews and thumbnails of [Texture3D](https://docs.unity3d.com/ScriptReference/Texture3D.html) asset
