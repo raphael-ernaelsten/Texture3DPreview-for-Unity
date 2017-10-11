@@ -46,6 +46,7 @@ in front of the declared field.
 ### Know issues / limitations
 
  - Previews are currently in additive mode
+ - It makes the interactive previews hard to see on the light grey free license skin of Unity
  - Previews of multiples Texture3D assets don't work
  - Sometimes, the preview of a Texture3D field becomes empty
 
