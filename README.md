@@ -67,4 +67,4 @@ Here's the process :
  - rescaled it to 128x128 and extracted all the frames using [VirtualDub](http://www.virtualdub.org/)
  - used [Unity's VFX Toolbox Image Sequencer](https://forum.unity.com/threads/release-thread-vfx-toolbox-image-sequencer.438465/) to resample the frames count and lay them on an images sheet
  ![Images sheet](https://i.imgur.com/hJvhZ78.jpg)
- - used a custom tool to build a Texture3D (basically create a Texture3D with the correct side then copy the images from the sheet as slices) from this sheet and save it as an asset
+ - used a custom tool to build a Texture3D (basically create a Texture3D with the correct size then copy the images from the sheet as slices) from this sheet and save it as an asset
