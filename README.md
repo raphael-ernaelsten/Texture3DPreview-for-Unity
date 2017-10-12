@@ -52,4 +52,19 @@ in front of the declared field.
 
 ----------
 
+### Contact
+
 Feel free to contact me for any comment or suggestion. Twitter : @raphernaelsten
+
+----------
+
+### Acknowledgment
+
+The sample Texture3D asset provided with this package was made using [MRI scans found on this website](https://neil.fraser.name/news/2007/11/19/).
+
+Here's the process :
+ - selecterd [the right-to-left gif](https://neil.fraser.name/news/2007/RL.gif)
+ - rescaled it to 128x128 and extracted all the frames using [VirtualDub](http://www.virtualdub.org/)
+ - used [Unity's VFX Toolbox Image Sequencer](https://forum.unity.com/threads/release-thread-vfx-toolbox-image-sequencer.438465/) to resampler the frames count and lay them on an images sheet
+ ![Images sheet](https://i.imgur.com/hJvhZ78.jpg)
+ - used a custom tool to build a Texture3D from this sheet and save it as an asset
