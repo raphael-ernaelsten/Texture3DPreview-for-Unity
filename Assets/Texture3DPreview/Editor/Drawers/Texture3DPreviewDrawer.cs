@@ -121,6 +121,7 @@ internal sealed class Texture3DPreviewDrawer : PropertyDrawer
             {
                 if (CheckIfTexture3D(property))
                 {
+                    size += EditorGUIUtility.singleLineHeight;
                     size += ComputePreviewSize((int)EditorGUIUtility.singleLineHeight);
                     size += EditorGUIUtility.singleLineHeight;
                 }
@@ -169,6 +170,8 @@ internal sealed class Texture3DPreviewDrawer : PropertyDrawer
                         return;
                     }
 
+                    position.y += EditorGUIUtility.singleLineHeight;
+
                     int size = ComputePreviewSize((int)position.x * 2);
                     Rect drawArea = position;
                     drawArea.width = size;
@@ -178,7 +181,7 @@ internal sealed class Texture3DPreviewDrawer : PropertyDrawer
                     _cameraAngle = PreviewRenderUtilityHelpers.DragToAngles(_cameraAngle, drawArea);
                     if (Event.current.type == EventType.Repaint)
                     {
-                        GUI.DrawTexture(drawArea, ((Texture3D)property.objectReferenceValue).RenderTexture3DPreview(drawArea, EditorStyles.helpBox, _cameraAngle, 6.5f /*TODO : Find distance with fov and boundingsphere, when non uniform size will be supported*/, _samplingIterations, _density), ScaleMode.StretchToFill, true);
+                        GUI.Box(drawArea, ((Texture3D)property.objectReferenceValue).RenderTexture3DPreview(drawArea, _cameraAngle, 6.5f /*TODO : Find distance with fov and boundingsphere, when non uniform size will be supported*/, _samplingIterations, _density));
                     }
 
                     Rect rect = drawArea;

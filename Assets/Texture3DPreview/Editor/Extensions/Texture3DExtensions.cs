@@ -12,6 +12,14 @@ public static class Texture3DExtensions
     /// The material used to render the Texture3D
     /// </summary>
     private static Material _previewTexture3dMaterial;
+    /// <summary>
+    /// The texture that will be used for the background
+    /// </summary>
+    private static Texture2D _backgroundTexture;
+    /// <summary>
+    /// The GUIStyle that will be used for the background
+    /// </summary>
+    private static GUIStyle _backgroundGuiStyle;
     #endregion
 
     #region Functions
@@ -28,6 +36,41 @@ public static class Texture3DExtensions
             }
 
             return _previewTexture3dMaterial;
+        }
+    }
+
+    /// <summary>
+    /// Accessor to the static background texture
+    /// </summary>
+    public static Texture2D BackgroundTexture
+    {
+        get
+        {
+            if (_backgroundTexture == null)
+            {
+                _backgroundTexture = new Texture2D(1, 1);
+                _backgroundTexture.SetPixel(0, 0, Color.gray * 0.5f);
+                _backgroundTexture.Apply();
+            }
+
+            return _backgroundTexture;
+        }
+    }
+
+    /// <summary>
+    /// Accessor to the static background GUIStyle
+    /// </summary>
+    public static GUIStyle BackgroundGuiStyle
+    {
+        get
+        {
+            _backgroundGuiStyle = new GUIStyle();
+            _backgroundGuiStyle.active.background = BackgroundTexture;
+            _backgroundGuiStyle.focused.background = BackgroundTexture;
+            _backgroundGuiStyle.hover.background = BackgroundTexture;
+            _backgroundGuiStyle.normal.background = BackgroundTexture;
+
+            return _backgroundGuiStyle;
         }
     }
 
@@ -58,15 +101,14 @@ public static class Texture3DExtensions
     /// </summary>
     /// <param name="texture3D">The Texture3D to preview</param>
     /// <param name="rect">The area where the preview is located</param>
-    /// <param name="backgroundStyle">The GUIStyle used for preview windows</param>
     /// <param name="angle">The camera angle</param>
     /// <param name="distance">The distance of the camera to the preview cube</param>
     /// <param name="samplingIterations">The amount of slices used to raymarch in the Texture3D</param>
     /// <param name="density">A linear factor to multiply the Texture3D with</param>
     /// <returns>A Texture with the preview</returns>
-    public static Texture RenderTexture3DPreview(this Texture3D texture3D, Rect rect, GUIStyle backgroundStyle, Vector2 angle, float distance, int samplingIterations, float density)
+    public static Texture RenderTexture3DPreview(this Texture3D texture3D, Rect rect, Vector2 angle, float distance, int samplingIterations, float density)
     {
-        PreviewRenderUtilityHelpers.Instance.BeginPreview(rect, backgroundStyle);
+        PreviewRenderUtilityHelpers.Instance.BeginPreview(rect, BackgroundGuiStyle);
 
         RenderInPreviewRenderUtility(texture3D, angle, distance, samplingIterations, density);
 
